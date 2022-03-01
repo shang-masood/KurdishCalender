@@ -46,7 +46,7 @@ const Month = (props) => {
       index=i;
     }
   }
-  if(index>=1&&index<7)
+  if(index>=1&&index<1)0
   days=days31;
   else if(index>=7&&index<12)
   days=days30
