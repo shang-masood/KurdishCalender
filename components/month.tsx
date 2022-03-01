@@ -55,7 +55,18 @@ const Month = (props) => {
   const [monthDay,setMonthDay]= useState("");
   const [showModal, setShowModal] = useState(false);
    const state={data:monthDay}
-  
+   var today = new Date();
+   let date = today.getFullYear()
+   let year=0;
+   console.log(monthK)
+   if(index!=monthK)
+   {
+     year=date+700
+   }
+   else
+   {
+     year=date+699
+   }
   return (
     <div>
 
@@ -75,7 +86,7 @@ const Month = (props) => {
         )}
       <div className="calendar">
         <header className={` ${monthK == index ? 'active' : 'null'}`}>
-          <h1>{Name}</h1>
+          <h1>{Name}  {year}</h1>
         </header>
 
         <ul className="weekdays">
@@ -108,7 +119,7 @@ const Month = (props) => {
               className={` ${dayK == d && monthK == index ? 'active' : 'null'}`}
               onClick={() => {
                 setShowModal(true);
-                setMonthDay(d.toString()+ " " +Name);
+                setMonthDay(d.toString()+ " " +Name+ " "+year.toString());
               
               }
             

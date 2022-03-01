@@ -34,12 +34,22 @@ const Home = () => {
 
   var monthK =(moment().locale('fa').format('MM'))-1
   let dayK= moment().locale('fa').format('D')
-
+  var today = new Date();
+   let date = today.getFullYear()
+   let year=0;
+   if(monthK <10)
+   {
+     year=date+700
+   }
+   else
+   {
+     year=date+699
+   }
   let active = false;
 
   return (
     <div>
-     
+     <h1> kurdish calender for {year} and {year+1} </h1>
       <Link to={`/month/${month[0]}`} className="link">
         <div className="calendar">
           <header className={` ${monthK == 0 ? 'active' : 'null'}`}>
